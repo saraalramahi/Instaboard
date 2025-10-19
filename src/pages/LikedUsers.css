@@ -1,0 +1,58 @@
+.liked-users {
+  padding: 30px;
+  text-align: center;
+}
+
+.liked-users h2 {
+  margin-bottom: 20px;
+  color: #0b2b33;
+}
+
+.liked-users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.liked-card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.liked-card img { 
+  width: 72px; 
+  height: 72px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 8px;
+}
+
+.liked-card button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6584;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.liked-card button:hover {
+  opacity: 0.9;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+  color: #5a2047;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

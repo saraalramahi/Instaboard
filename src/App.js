@@ -1,36 +1,33 @@
 
-// import React from "react";
-// import UserList from "./components/userlist/userlist";
-// import "./App.css";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1 style={{color:"Brown"}}>InstaBoard</h1>
-//       <UserList />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import React, { useState } from "react";
-import UserList from "./components/userlist/userlist";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Team from "./components/Team/Team";
+import TeamDetails from "./components/TeamDetails/TeamDetails";
+import LikedUsers from "./pages/LikedUsers";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
+  
   return (
-    <div className={darkMode ? "App dark-mode" : "App"}>
-      <h1>InstaBoard</h1>
-      <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-      <UserList />
-    </div>
+    
+    <Router>
+      <Layout>
+      <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/team" element={<Team />} />
+  <Route path="/team-details" element={<TeamDetails />} />
+  <Route path="/liked-users" element={<LikedUsers />} />
+  <Route path="/about" element={<About />} />
+  <Route path="*" element={<NotFound />} />
+</Routes>
+      </Layout>
+    </Router>
+    
   );
 }
 
 export default App;
-
